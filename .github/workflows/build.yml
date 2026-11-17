@@ -13,12 +13,12 @@ jobs:
         with:
           node-version: 20
       - uses: dtolnay/rust-toolchain@stable
-      - name: Install dependencies
+      - name: Install Rust dependencies
+        run: cargo install tauri-cli --locked
+      - name: Install JS dependencies
         run: npm install
-      - name: Install Tauri CLI
-        run: npm install -D @tauri/cli
       - name: Build Tauri
-        run: npx tauri build
+        run: tauri build
       - name: Upload MSI
         uses: actions/upload-artifact@v4
         with:
