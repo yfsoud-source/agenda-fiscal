@@ -1,0 +1,1 @@
+module.exports="-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE/t53zUB9KBRl6yt2yJzh+nKGND6v\n1WOL94zezKFVuDsZifzCuzTFt5ghS2n4x+8j1RvfhNXSFoQ4ws4IWsB+kw==\n-----END PUBLIC KEY-----\n";

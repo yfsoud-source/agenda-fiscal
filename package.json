@@ -1,0 +1,30 @@
+{
+  "name": "agenda-fiscal",
+  "version": "1.0.0",
+  "description": "Agenda Fiscal Marocain",
+  "author": "Cabinet",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "keys": "node tools/gen-keys.js ../generateur-licences.html",
+    "dist": "electron-builder --win --publish never"
+  },
+  "devDependencies": { "electron": "^33.0.0", "electron-builder": "^26.0.0" },
+  "build": {
+    "appId": "ma.cabinet.agendafiscal",
+    "productName": "Agenda Fiscal",
+    "artifactName": "Agenda-Fiscal.${ext}",
+    "asar": true,
+    "files": ["main.js", "preload.js", "fiscal.js", "pubkey.js", "ui/**/*"],
+    "afterPack": "./afterPack.js",
+    "electronFuses": {
+      "runAsNode": false,
+      "enableNodeOptionsEnvironmentVariable": false,
+      "enableNodeCliInspectArguments": false,
+      "enableCookieEncryption": true,
+      "onlyLoadAppFromAsar": true,
+      "enableEmbeddedAsarIntegrityValidation": true
+    },
+    "win": { "target": ["nsis", "msi"] }
+  }
+}
